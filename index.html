@@ -24,7 +24,7 @@ body {
   padding: 10px;
 }
 
-.row {margin: 0 -5px;}
+.row {margin: 5px;}
 
 .space {margin-top: 0px;
     margin-bottom: 0px;}
@@ -112,10 +112,12 @@ body {
 	<i class="fo fa fa-home"></i>
 	</div>
     <div class="top-column">
-	<b align="center">Live offers!</b>
+	<b align="center" style="font-size:14px;">Live offers!</b>
 	</div>
     <div align="right" class="top-column">
 	<i class="fo fa fa-user-circle"></i>
+	&nbsp;
+	<i class="fo fa fa-microphone"></i>
 	&nbsp;
 	<i id="shareBtn2" class="fo fa fa-share-alt"></i>
 	</div>
@@ -212,13 +214,13 @@ body {
       }
     </script>
 <script>
-      const shareBtn = document.querySelector('#shareBtn2');
-      shareBtn.onclick = async function() {
+      const shareBtn2 = document.querySelector('#shareBtn2');
+      shareBtn2.onclick = async function() {
         if(navigator.share) {
           const shareData = {
             title: 'Web Share',
             text: 'This is some text I wanted to share',
-            url: 'https://yahoo.com'
+            url: 'https://bing.com'
           };
           await navigator.share(shareData);
           console.log('Share Successfull');
