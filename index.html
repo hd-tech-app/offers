@@ -16,7 +16,8 @@ body {
 .column {
   float: left;
   width: 25%;
-  padding: 0px 5px;
+  padding: 5px;
+  margin: 10px;
 }
 .top-column {
   float: left;
@@ -27,7 +28,7 @@ body {
 .row {margin: 0 -5px;}
 
 .space {margin-top: 0px;
-    margin-bottom: 9px;}
+    margin-bottom: 0px;}
 
 /* Clear floats after the columns */
 .row:after {
@@ -41,7 +42,7 @@ body {
   .column {
     width: 50%;
     display: block;
-    margin-bottom: 10px;
+    margin: 10px;
   }
 }
 
@@ -50,7 +51,7 @@ body {
   .column {
     width: 100%;
     display: block;
-    margin-bottom: 10px;
+    margin: 10px;
   }
 }
 
@@ -96,7 +97,7 @@ body {
   background-color: #5d6375;
 }
 
-.fa {font-size:40px;}
+.fa {font-size:50px;}
 
 .fo {font-size:30px;}
 
@@ -112,7 +113,7 @@ body {
 	<i class="fo fa fa-podcast"></i>
 	</div>
     <div class="top-column">
-	<text align="center">Live offers!</text>
+	<h3 align="center">Live offers!</h3>
 	</div>
     <div align="right" class="top-column">
 	<i class="fo fa fa-user-circle"></i>
@@ -197,6 +198,7 @@ body {
 	
 <script>
       const shareBtn = document.querySelector('#shareBtn');
+      const shareBtn = document.querySelector('#shareBtn2');
       shareBtn.onclick = async function() {
         if(navigator.share) {
           const shareData = {
