@@ -26,7 +26,7 @@ body {
 
 .row {margin: 0 -5px;}
 
-.space {margin-top: 9px;
+.space {margin-top: 0px;
     margin-bottom: 9px;}
 
 /* Clear floats after the columns */
@@ -57,7 +57,7 @@ body {
 /* Style the counter cards */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 12px;
+  padding: 10px;
   text-align: center;
   background-color: #4b6bd2;
   color: white;
@@ -104,6 +104,28 @@ body {
 
 </style>
 
+<script>
+  const shareBtnRef = document.querySelector('#shareBtn');
+  shareBtnRef.onclick = async () => {
+    //check if native sharing is available
+    if(navigator.share) {
+      try {
+        const shareData = {
+          title: 'Web Share',
+          text: 'Wanted to share this with you',
+          url: 'https://yahoo.com',
+        }
+        await navigator.share(shareData);
+        console.log('Share successfull');
+      } catch(err) {
+        console.log('Error: ', err);
+      }
+    } else {
+      console.warn('Native Web Sharing not supported');
+    }
+  }
+</script>
+	
 </head>
 <body>
 
@@ -112,12 +134,12 @@ body {
 	<i class="fo fa fa-podcast" aria-hidden="true"></i>
 	</div>
     <div class="top-column">
-	<h2 align="center">Live offers ends soon</h2>
+	<h2 align="center">Live offers</h2>
 	</div>
     <div align="right" class="top-column">
 	<i class="fo fa fa-user-circle"></i>
 	&nbsp;
-	<i class="fo fa fa-share-alt"></i>
+	<i id="shareBtn" class="fo fa fa-share-alt"></i>
 	</div>
 </div>
 
@@ -191,7 +213,7 @@ body {
 <i class="icon fa fa-external-link" aria-hidden="true"></i>
 <i class="icon fa fa-thumbs-up" aria-hidden="true"></i>
 <i class="icon fa fa-star" aria-hidden="true"></i>
-<i class="icon fa fa-share" aria-hidden="true"></i>
+<i id="shareBtn" class="icon fa fa-share" aria-hidden="true"></i>
 
 </div>
 
