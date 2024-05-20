@@ -17,7 +17,6 @@ body {
   float: left;
   width: 25%;
   padding: 5px;
-  margin: 10px;
 }
 .top-column {
   float: left;
@@ -42,7 +41,7 @@ body {
   .column {
     width: 50%;
     display: block;
-    margin: 10px;
+    margin-bottom: 10px;
   }
 }
 
@@ -51,7 +50,7 @@ body {
   .column {
     width: 100%;
     display: block;
-    margin: 10px;
+    margin-bottom: 10px;
   }
 }
 
@@ -110,10 +109,10 @@ body {
 
 <div class="row top-bar">
     <div align="left" class="top-column">
-	<i class="fo fa fa-podcast"></i>
+	<i class="fo fa fa-home"></i>
 	</div>
     <div class="top-column">
-	<h3 align="center">Live offers!</h3>
+	<b align="center">Live offers!</b>
 	</div>
     <div align="right" class="top-column">
 	<i class="fo fa fa-user-circle"></i>
@@ -198,6 +197,21 @@ body {
 	
 <script>
       const shareBtn = document.querySelector('#shareBtn');
+      shareBtn.onclick = async function() {
+        if(navigator.share) {
+          const shareData = {
+            title: 'Web Share',
+            text: 'This is some text I wanted to share',
+            url: 'https://yahoo.com'
+          };
+          await navigator.share(shareData);
+          console.log('Share Successfull');
+        } else {
+          alert('Web Share not supported');
+        }
+      }
+    </script>
+<script>
       const shareBtn = document.querySelector('#shareBtn2');
       shareBtn.onclick = async function() {
         if(navigator.share) {
@@ -213,6 +227,7 @@ body {
         }
       }
     </script>
+	
 
 </body>
 </html>
