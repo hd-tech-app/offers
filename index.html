@@ -27,7 +27,7 @@ body {
 .row {margin: 0 -5px;}
 
 .space {margin-top: 0px;
-    margin-bottom: 9px;}
+    margin-bottom: 0px;}
 
 /* Clear floats after the columns */
 .row:after {
@@ -65,7 +65,7 @@ body {
 
 .bar {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 12px;
+  padding: 10px;
   text-align: center;
   background-color: #4b6bd2;
   margin: 0px;
@@ -74,7 +74,7 @@ body {
 
 .top-bar {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 12px;
+  padding: 10px;
   background-color: #4b6bd2;
   margin: 0px;
   color: white;
@@ -96,35 +96,13 @@ body {
   background-color: #5d6375;
 }
 
-.fa {font-size:50px;}
+.fa {font-size:40px;}
 
 .fo {font-size:30px;}
 
 .icon {font-size:30px; padding: 10px 20px;}
 
 </style>
-
-<script>
-  const shareBtnRef = document.querySelector('#shareBtn');
-  shareBtnRef.onclick = async () => {
-    //check if native sharing is available
-    if(navigator.share) {
-      try {
-        const shareData = {
-          title: 'Web Share',
-          text: 'Wanted to share this with you',
-          url: 'https://yahoo.com',
-        }
-        await navigator.share(shareData);
-        console.log('Share successfull');
-      } catch(err) {
-        console.log('Error: ', err);
-      }
-    } else {
-      console.warn('Native Web Sharing not supported');
-    }
-  }
-</script>
 	
 </head>
 <body>
@@ -134,7 +112,7 @@ body {
 	<i class="fo fa fa-podcast"></i>
 	</div>
     <div class="top-column">
-	<i align="center">Live offers</i>
+	<text align="center">Live offers!</text>
 	</div>
     <div align="right" class="top-column">
 	<i class="fo fa fa-user-circle"></i>
@@ -215,8 +193,25 @@ body {
 <i class="icon fa fa-star"></i>
 <i class="icon fa fa-share" id="shareBtn"></i>
 <button id="shareBtn">Share</button>
-	
+
 </div>
+	
+<script>
+      const shareBtn = document.querySelector('#shareBtn');
+      shareBtn.onclick = async function() {
+        if(navigator.share) {
+          const shareData = {
+            title: 'Web Share',
+            text: 'This is some text I wanted to share',
+            url: 'https://yahoo.com'
+          };
+          await navigator.share(shareData);
+          console.log('Share Successfull');
+        } else {
+          alert('Web Share not supported');
+        }
+      }
+    </script>
 
 </body>
 </html>
