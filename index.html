@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#7f44d3">
+<meta name="theme-color" content="#2e4283">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Online Shopping - Discover the Best Deals Today</title>
 <meta name="title" content="Online Shopping - Discover the Best Deals Today">
@@ -82,9 +82,9 @@ body {
 }
 
 .icon-top:hover {
-  color: #ffc107;
+  color: #ff0057;
   transition: transform 0.3s;
-  transform: scale(1.75);
+  transform: scale(1.40);
 }
 
 .icon-bottom:hover {
@@ -96,7 +96,8 @@ body {
 .bar-top {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 5px;
-  background-color: #2e4283;
+ background: rgb(13,200,214);
+ background: linear-gradient(135deg, rgba(13,200,214,1) 0%, rgba(45,88,253,1) 100%);
   margin: 0px;
   color: white;
 }
@@ -110,7 +111,7 @@ body {
   color: white;
 }
 
-.fa {font-size:60px;}
+.fa {font-size:50px;}
 
 .fo {font-size:30px;}
 
@@ -118,6 +119,11 @@ body {
 
 .icon-bottom {font-size:30px; padding: 10px 15px;}
 
+h3 {
+    display: block;
+    font-size: 16px;
+    margin: 10px 5px;
+}
 
 .tooltip {
   position: relative;
@@ -193,7 +199,7 @@ body {
 }
 
 @media (max-width: 1200px) {
-  #search-form { width: 50%; }
+  #search-form { width: 98%; }
 }
 @media (max-width: 600px) {
   .container { padding: 10px 0px 0px 0px; }
@@ -212,7 +218,7 @@ body {
 	<i class="icon-top fa fa-user-circle"></i>
 	</div>
     <div align="center" class="top-column">
-	<b style="font-size:15px;">Live offers!</b>
+	<h3 style="font-size:18px;">Live offers!</h3>
 	</div>
     <div align="right" class="top-column">
 	<i class="icon-top fa fa-heart"></i>
@@ -381,6 +387,13 @@ function startDictation() {
       };
     }
   }
+  
+  window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
 </script>
 
 </body>
