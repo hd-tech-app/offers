@@ -2,7 +2,20 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#7f44d3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Online Shopping - Discover the Best Deals Today</title>
+<meta name="title" content="Online Shopping - Discover the Best Deals Today">
+<meta name="description" content="Discover a wide range of products and enjoy a seamless shopping experience at our online store. Find everything you need in one place. Shop now!">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="/">
+<meta property="og:title" content="Online Shopping - Discover the Best Deals Today">
+<meta property="og:description" content="Discover a wide range of products and enjoy a seamless shopping experience at our online store. Find everything you need in one place. Shop now!">
+
+<script type="module" src="/assets/script.js"></script>
+<link rel="stylesheet" href="/assets/style.css">
+
 <style>
 * {
   box-sizing: border-box;
@@ -12,29 +25,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.row {margin: 5px -5px -5px -5px;}
+
+.space {margin-top: 0px;
+		margin-bottom: 0px;}
+
 /* Float four columns side by side */
 .column {
   float: left;
   width: 25%;
   padding: 5px;
-  margin-bottom: 10px;
 }
+
 .top-column {
   float: left;
   width: 33.33%;
   padding: 10px;
-}
-
-.row {margin: 0 -5px;}
-
-.space {margin-top: 0px;
-    margin-bottom: 0px;}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 /* Responsive columns */
@@ -42,7 +48,6 @@ body {
   .column {
     width: 50%;
     display: block;
-    margin-bottom: 10px;
   }
 }
 
@@ -51,78 +56,178 @@ body {
   .column {
     width: 100%;
     display: block;
-    margin-bottom: 10px;
   }
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Style the counter cards */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 10px;
+  padding: 1px;
   text-align: center;
   background-color: #4b6bd2;
   color: white;
-}
-
-.bar {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  text-align: center;
-  background-color: #4b6bd2;
-  margin: 0px;
-  color: white;
-}
-
-.top-bar {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  background-color: #4b6bd2;
-  margin: 0px;
-  color: white;
-}
-
-.icon:hover {
-  color: #f5b207;
-  transition: transform 0.2s;
-  transform: scale(1.75);
 }
 
 .card:hover {
   background-color: #e91e63d9;
-  transition: transform 0.6s;
+  transition: transform 0.3s;
   transform: scale(1.05);
 }
 
-.card:active {
-  background-color: #5d6375;
+.icon-top:hover {
+  color: #ffc107;
+  transition: transform 0.3s;
+  transform: scale(1.75);
 }
 
-.fa {font-size:50px;}
+.icon-bottom:hover {
+  color: #ffc107;
+  transition: transform 0.3s;
+  transform: scale(1.75);
+}
+
+.bar-top {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  background-color: #2e4283;
+  margin: 0px;
+  color: white;
+}
+
+.bar-bottom {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  text-align: center;
+  background-color: #2e4283;
+  margin: 10px 0px 0px;
+  color: white;
+}
+
+.fa {font-size:60px;}
 
 .fo {font-size:30px;}
 
-.icon {font-size:30px; padding: 10px 20px;}
+.icon-top {font-size:30px; padding: 10px 10px;}
+
+.icon-bottom {font-size:30px; padding: 10px 20px;}
+
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 80px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -40px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size:15px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.container {
+  padding: 10px 0px 0px 0px;
+}
+#search-form {
+  width: 30%;
+  margin: 0 auto;
+  position: relative;
+}
+#search-form input {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+}
+#search-form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 3rem;
+  text-align: center;
+  font-size: 1.75rem;
+  cursor: pointer;
+  color: #333;
+}
+.info {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 1200px) {
+  #search-form { width: 50%; }
+}
+@media (max-width: 600px) {
+  .container { padding: 10px 0px 0px 0px; }
+  #search-form { width: 100%; }
+  .info { font-size: 0.5rem; }
+}
 
 </style>
 	
 </head>
 <body>
 
-<div class="row top-bar">
+
+<div class="row bar-top">
     <div align="left" class="top-column">
-	<i class="fo fa fa-user-circle"></i>
+	<i class="icon-top fa fa-user-circle"></i>
 	</div>
-    <div class="top-column">
-	<b align="center" style="font-size:18px;">Live offers!</b>
+    <div align="center" class="top-column">
+	<b style="font-size:18px;">Live offers!</b>
 	</div>
     <div align="right" class="top-column">
-	<i class="fo fa fa-microphone"></i>
-	&nbsp;
-	<i id="shareBtn2" class="fo fa fa-share-alt"></i>
+	<i class="icon-top fa fa-heart"></i>
+	<i class="icon-top fa fa-share-alt" id="shareBtn2"></i>
 	</div>
 </div>
 
-<div class="space"></div>
+<div class="container">
+  <form action="https://www.google.com/search" method="get" target="_blank" id="search-form">
+    <input name="q" type="text" placeholder="Search..." autocomplete="off" autofocus>
+    <button type="button"><i class="icon-top fa fa-microphone"></i></button>
+  </form>
+  <p class="info"></p>
+</div>
 
 <div class="row">
   <a class="active" target="_blank" href="https://google.com"><div class="column">
@@ -154,7 +259,6 @@ body {
   </div></a> 
 </div>
 
-<div class="space"></div>
 
 <div class="row">
   <a href="#"><div class="column">
@@ -163,7 +267,30 @@ body {
       <h3>Categories</h3>
     </div>
   </div></a> 
+  
+  <a href="#"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-cutlery"></i></p>
+      <h3>Grocery</h3>
+    </div>
+  </div></a> 
 
+  <a href="https://www.amazon.in/minitv?_encoding=UTF8"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-plane"></i></p>
+      <h3>Travel</h3>
+    </div>
+  </div></a> 
+  
+  <a href="https://gamesnacks.com"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-credit-card"></i></p>
+      <h3>Pay Bills</h3>
+    </div>
+  </div></a> 
+</div>
+
+<div class="row">
   <a href="https://www.amazon.in/minitv?_encoding=UTF8"><div class="column">
     <div class="card">
       <p><i class="fa fa-tv"></i></p>
@@ -178,6 +305,13 @@ body {
     </div>
   </div></a> 
   
+    <a href="#"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-book"></i></p>
+      <h3>E-Books</h3>
+    </div>
+  </div></a>
+  
   <a href="#"><div class="column">
     <div class="card">
       <p><i class="fa fa-comments-o"></i></p>
@@ -186,49 +320,14 @@ body {
   </div></a> 
 </div>
 
-<div class="space"></div>
 
-<div class="row bar">
-<i class="icon fa fa-external-link" aria-hidden="true"></i>
-<i class="icon fa fa-thumbs-up"></i>
-<i class="icon fa fa-star"></i>
-<i id="shareBtn" class="icon fa fa-share"></i>
+<div class="bar-bottom">
+<i class="tooltip icon-bottom fa fa-envelope"><span class="tooltiptext">Contact us</span></i>
+<i class="tooltip icon-bottom fa fa-info-circle"><span class="tooltiptext">Privacy policy</span></i>
+<i class="tooltip icon-bottom fa fa-external-link"><span class="tooltiptext">More apps</span></i>
+<i class="tooltip icon-bottom fa fa-star"><span class="tooltiptext">Rate</span></i>
+<i class="tooltip icon-bottom fa fa-share" id="shareBtn"><span class="tooltiptext">Share</span></i>
 
 </div>
-	
-<script>
-      const shareBtn = document.querySelector('#shareBtn');
-      shareBtn.onclick = async function() {
-        if(navigator.share) {
-          const shareData = {
-            title: 'Web Share',
-            text: 'This is some text I wanted to share',
-            url: 'https://yahoo.com'
-          };
-          await navigator.share(shareData);
-          console.log('Share Successfull');
-        } else {
-          alert('Web Share not supported');
-        }
-      }
-    </script>
-<script>
-      const shareBtn2 = document.querySelector('#shareBtn2');
-      shareBtn2.onclick = async function() {
-        if(navigator.share) {
-          const shareData = {
-            title: 'Web Share',
-            text: 'This is some text I wanted to share',
-            url: 'https://bing.com'
-          };
-          await navigator.share(shareData);
-          console.log('Share Successfull');
-        } else {
-          alert('Web Share not supported');
-        }
-      }
-    </script>
-	
-
 </body>
 </html>
