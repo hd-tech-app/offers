@@ -166,7 +166,6 @@ h3 {
   opacity: 1;
 }
 
-
 .container {
   padding: 10px 0px 0px 0px;
 }
@@ -232,9 +231,11 @@ h3 {
  
 
 <div class="container" id="search-form">
-  <form id="voice" method="get" action="https://www.google.com/search" target="_blank">
-    <input type="text" name="q" id="transcript" placeholder="Search...">
-    <button onclick="startDictation()" type="button"><i class="icon-top fa fa-microphone"></i></button>
+  <form id="voice" method="get" action="https://www.amazon.in/s/" target="_blank">
+    <input type="text" name="k" id="transcript" placeholder="Search...">
+	<input type="hidden" name="tag" value="online_shopping_offer-21">
+	<input type="hidden" name="ref" value="nb_sb_noss">
+    <button onclick="startDictation()" type="button"><i style="color:black;" class="icon-top fa fa-microphone"></i></button>
   </form>
 </div>
 
