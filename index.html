@@ -103,7 +103,7 @@ body {
 
 .bar-bottom {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 10px;
+  padding: 5px;
   text-align: center;
   background-color: #2e4283;
   margin: 10px 0px 0px;
@@ -222,45 +222,14 @@ body {
 </div>
 
 
-<form id="labnol" method="get" action="http://www.labnol.org">
-  <div class="speech">
-    <input type="text" name="s" id="transcript" placeholder="Say Something" />
 
-  </div>
-</form>
-
-<script>
-  function startDictation() {
-    if (window.hasOwnProperty('webkitSpeechRecognition')) {
-      var recognition = new webkitSpeechRecognition();
-
-      recognition.continuous = false;
-      recognition.interimResults = false;
-      recognition.lang = 'en-US';
-      recognition.start();
-
-      recognition.onresult = function (e) {
-        document.getElementById('transcript').value = e.results[0][0].transcript;
-        recognition.stop();
-        document.getElementById('labnol').submit();
-      };
-      recognition.onerror = function (e) {
-        recognition.stop();
-      };
-    }
-  }
-</script>
-
-
-
-
-<div class="container">
-  <form action="https://www.google.com/search" method="get" target="_blank" id="search-form">
-    <input name="q" type="text" placeholder="Search..." autocomplete="off" autofocus>
-    <button type="button"><i class="icon-top fa fa-microphone"></i></button>
+<div class="container" id="search-form">
+  <form id="voice" method="get" action="https://www.google.com/search" target="_blank">
+    <input type="text" name="q" id="transcript" placeholder="Search...">
+    <button onclick="startDictation()" type="button"><i class="icon-top fa fa-microphone"></i></button>
   </form>
-  <p class="info"></p>
 </div>
+
 
 <div class="row">
   <a class="active" target="_blank" href="https://google.com"><div class="column">
@@ -378,7 +347,7 @@ const shareBtn = document.querySelector('#shareBtn');
         }
       }
 
-      const shareBtn2 = document.querySelector('#shareBtn2');
+const shareBtn2 = document.querySelector('#shareBtn2');
       shareBtn2.onclick = async function() {
         if(navigator.share) {
           const shareData = {
@@ -394,87 +363,25 @@ const shareBtn = document.querySelector('#shareBtn');
       }
 	  
 	  
-const searchForm = document.querySelector("#search-form");
-const searchFormInput = searchForm.querySelector("input"); // <=> document.querySelector("#search-form input");
-const info = document.querySelector(".info");
+function startDictation() {
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+      var recognition = new webkitSpeechRecognition();
 
-// The speech recognition interface lives on the browser’s window object
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; // if none exists -> undefined
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'en-US';
+      recognition.start();
 
-if(SpeechRecognition) {
-  console.log("Your Browser supports speech Recognition");
-  
-  const recognition = new SpeechRecognition();
-  recognition.continuous = true;
-  // recognition.lang = "en-US";
-
-
-
-
-  const micBtn = searchForm.querySelector("button");
-  const micIcon = micBtn.firstElementChild;
-
-  micBtn.addEventListener("click", micBtnClick);
-  function micBtnClick() {
-    if(micIcon.classList.contains("fa-microphone")) { // Start Voice Recognition
-      recognition.start(); // First time you have to allow access to mic!
-    }
-    else {
-      recognition.stop();
+      recognition.onresult = function (e) {
+        document.getElementById('transcript').value = e.results[0][0].transcript;
+        recognition.stop();
+        document.getElementById('voice').submit();
+      };
+      recognition.onerror = function (e) {
+        recognition.stop();
+      };
     }
   }
-
-  recognition.addEventListener("start", startSpeechRecognition); // <=> recognition.onstart = function() {...}
-  function startSpeechRecognition() {
-    micIcon.classList.remove("fa-microphone");
-    micIcon.classList.add("fa-microphone-slash");
-    searchFormInput.focus();
-    console.log("Voice activated, SPEAK");
-  }
-
-  recognition.addEventListener("end", endSpeechRecognition); // <=> recognition.onend = function() {...}
-  function endSpeechRecognition() {
-    micIcon.classList.remove("fa-microphone-slash");
-    micIcon.classList.add("fa-microphone");
-    searchFormInput.focus();
-    console.log("Speech recognition service disconnected");
-  }
-
-  recognition.addEventListener("result", resultOfSpeechRecognition); // <=> recognition.onresult = function(event) {...} - Fires when you stop talking
-  function resultOfSpeechRecognition(event) {
-    const current = event.resultIndex;
-    const transcript = event.results[current][0].transcript;
-    
-    if(transcript.toLowerCase().trim()==="stop recording") {
-      recognition.stop();
-    }
-    else if(!searchFormInput.value) {
-      searchFormInput.value = transcript;
-    }
-    else {
-      if(transcript.toLowerCase().trim()==="go") {
-        searchForm.submit();
-      }
-      else if(transcript.toLowerCase().trim()==="reset input") {
-        searchFormInput.value = "";
-      }
-      else {
-        searchFormInput.value = transcript;
-      }
-    }
-    // searchFormInput.value = transcript;
-    // searchFormInput.focus();
-    // setTimeout(() => {
-    //   searchForm.submit();
-    // }, 500);
-  }
-  
-  
-}
-else {
-  console.log("Your Browser does not support speech Recognition");
-  info.textContent = "Your Browser does not support Speech Recognition";
-}
 </script>
 
 </body>
