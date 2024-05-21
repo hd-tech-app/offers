@@ -112,7 +112,8 @@ body {
   color: white;
 }
 
-.fa {font-size:50px;}
+.fa {font-size:50px;
+	 color: white;}
 
 .fo {font-size:30px;}
 
@@ -125,6 +126,7 @@ h3 {
     font-size: 16px;
     margin: 10px 5px;
 }
+
 
 .tooltip {
   position: relative;
@@ -343,8 +345,8 @@ const shareBtn = document.querySelector('#shareBtn');
         if(navigator.share) {
           const shareData = {
             title: 'Web Share',
-            text: 'This is some text I wanted to share',
-            url: 'https://yahoo.com'
+            text: 'Get amazing live offers and cashback shop now!',
+            url: 'https://play.google.com/store/apps/dev?id=8760295387755897783'
           };
           await navigator.share(shareData);
           console.log('Share Successfull');
@@ -358,8 +360,8 @@ const shareBtn2 = document.querySelector('#shareBtn2');
         if(navigator.share) {
           const shareData = {
             title: 'Web Share',
-            text: 'This is some text I wanted to share',
-            url: 'https://bing.com'
+            text: 'Get amazing live offers and cashback shop now!',
+            url: 'https://play.google.com/store/apps/dev?id=8760295387755897783'
           };
           await navigator.share(shareData);
           console.log('Share Successfull');
