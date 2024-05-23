@@ -71,13 +71,13 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 1px;
   text-align: center;
-  background-color: #4b6bd2;
   color: white;
   border-radius: 6px;
+  background: linear-gradient(0deg, #1565c0 0%, #2196f3 100%);
 }
 
 .card:hover {
-  background-color: #e91e63d9;
+  background: linear-gradient(0deg, #ad1459 0%, #e91e8da8 100%);
   transition: transform 0.3s;
   transform: scale(1.05);
 }
@@ -96,20 +96,21 @@ body {
 
 .bar-top {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 5px;
- background: rgb(13,200,214);
- background: linear-gradient(135deg, rgba(13,200,214,1) 0%, rgba(45,88,253,1) 100%);
+  padding: 0px 5px 8px 5px;
+  background: linear-gradient(135deg, rgba(13,200,214,1) 0%, rgba(45,88,253,1) 100%);
   margin: 0px;
   color: white;
+  border-radius: 6px;
 }
 
 .bar-bottom {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 5px;
   text-align: center;
-  background-color: #2e4283;
+  background: linear-gradient(135deg, rgba(13,200,214,1) 0%, rgba(45,88,253,1) 100%);
   margin: 10px 0px 0px;
   color: white;
+  border-radius: 6px;
 }
 
 .fa {font-size:50px;
@@ -166,8 +167,8 @@ h3 {
   opacity: 1;
 }
 
-.container {
-  padding: 10px 0px 0px 0px;
+.search-container {
+  padding: 0px 45px 0px 10px;
 }
 #search-form {
   width: 30%;
@@ -183,7 +184,7 @@ h3 {
 }
 #search-form button {
   position: absolute;
-  right: 0;
+  right: -3px;
   bottom: -5px;
   background-color: transparent;
   outline: none;
@@ -194,6 +195,18 @@ h3 {
   cursor: pointer;
   color: #333;
 }
+.button2 {
+  position: absolute;
+  right: 48px;
+  bottom: 5px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  color:#ffa000d4;
+  font-size: 25px;
+}
 .info {
   margin-top: 0.5rem;
   text-align: center;
@@ -201,7 +214,7 @@ h3 {
 }
 
 @media (max-width: 1200px) {
-  #search-form { width: 98%; }
+  #search-form { width: 100%; }
 }
 @media (max-width: 600px) {
   .container { padding: 10px 0px 0px 0px; }
@@ -214,8 +227,8 @@ h3 {
 </head>
 <body>
 
-
-<div class="row bar-top">
+<div class="bar-top">
+<div class="row">
     <div align="left" class="top-column">
 	<a href="https://amzn.to/44YGYAb"><i class="icon-top fa fa-user-circle"></i></a>
 	<a href="https://amzn.to/3wJVzCP"><i class="icon-top fa fa-trophy"></i></a>
@@ -225,20 +238,19 @@ h3 {
 	</div>
     <div align="right" class="top-column">
 	<a href="https://www.amazon.in/hz/wishlist/ls?requiresSignIn=1&ref_=nav_AccountFlyout_wl&tag=online_shopping_offer-21"><i class="icon-top fa fa-heart"></i></a>
-	<i class="icon-top fa fa-share-alt" id="shareBtn2"></i>
-	</div>
-</div>
+	<a target="_blank" href="shareapp://message?=Check out this cool thing! Get amazing live offers and cashback SHOP NOW!&url=https://play.google.com/store/apps/dev?id=8760295387755897783"><i class="icon-top fa fa-share-alt" id="shareBtn2"></i></a>
+	</div></div>
 
- 
 
-<div class="container" id="search-form">
+<div class="search-container" id="search-form">
   <form id="voice" method="get" action="https://www.amazon.in/s/">
-    <input type="text" name="k" id="transcript" placeholder="Search...">
+    <input type="text" name="k" id="transcript" placeholder="Search any product...">
 	<input type="hidden" name="tag" value="online_shopping_offer-21">
-    <button onclick="startDictation()" type="button"><i style="color:black;" class="icon-top fa fa-microphone"></i></button>
+    <button onclick="startDictation()" type="button"><i class="icon-top fa fa-microphone"></i></button>
+	<button type="submit"><i class="button2 icon-top fa fa-search"></i></button>
   </form>
 </div>
-
+</div>
 
 <div class="row">
   <a href="https://amzn.to/4dO90SS"><div class="column">
@@ -337,7 +349,7 @@ h3 {
 <a href="#"><i class="tooltip icon-bottom fa fa-info-circle"><span class="tooltiptext">Privacy policy</span></i></a>
 <a href="https://play.google.com/store/apps/developer?id=HD+TECH"><i class="tooltip icon-bottom fa fa-external-link"><span class="tooltiptext">More apps</span></i></a>
 <a href="https://play.google.com/store/apps/dev?id=8760295387755897783"><i class="tooltip icon-bottom fa fa-star"><span class="tooltiptext">Rate</span></i></a>
-<a href="shareapp://message?=Check out this cool thing!&url=https://play.google.com/store/apps/dev?id=8760295387755897783">Share (Get amazing live offers and cashback shop now!, https://play.google.com/store/apps/dev?id=8760295387755897783)<i class="tooltip icon-bottom fa fa-share" id="shareBtn"><span class="tooltiptext">Share</span></i></a>
+<a href="shareapp://message?=Check out this cool thing! Get amazing live offers and cashback SHOP NOW!&url=https://play.google.com/store/apps/dev?id=8760295387755897783"><i class="tooltip icon-bottom fa fa-share" id="shareBtn"><span class="tooltiptext">Share</span></i></a>
 </div>
 
 <script>
@@ -392,6 +404,7 @@ function startDictation() {
     }
   }
   
+
   window.addEventListener("load",function() {
     setTimeout(function(){
         // This hides the address bar:
