@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#4b6bd2">
+<meta name="theme-color" content="#212c3a">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <title>Online Shopping - Discover the Best Deals Today</title>
 <meta name="title" content="Online Shopping - Discover the Best Deals Today">
@@ -17,12 +17,14 @@
 
 
 <style>
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
   box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 .row {margin: 5px -5px -5px -5px;}
@@ -135,14 +137,27 @@ body {
   border-radius: 6px;
 }
 
+.bar-extra {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(13,200,214,1) -28%, rgba(45,88,253,1) 133%);
+  margin: 10px 0px 0px;
+  color: white;
+  border-radius: 6px;
+}
+
 .fa {font-size:45px;
 	 color: white;}
 
-.fo {font-size:30px;}
-
-.icon-top {font-size:27px; padding: 10px 10px;}
-
-.icon-bottom {font-size:27px; padding: 10px 15px;}
+.fo {font-size:30px;
+	 color: white;}
+	 
+.h2 {display: block;
+	   font-size: 20px;
+       color: white;
+       margin: 2px 0px;
+	   font-weight: bold;}
 
 h3 {
     display: block;
@@ -150,6 +165,34 @@ h3 {
     margin: 10px 5px;
 }
 
+
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #E0E0E0;
+  transition: transform 0.3s;
+  transform: scale(1.20);
+}
+
+
+.menu {
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.menu a, h3 {
+  display: inline-block;
+
+}
+
+
+.icon-top {font-size:27px; padding: 10px 10px;}
+
+.icon-bottom {font-size:27px; padding: 10px 15px;}
 
 .tooltip {
   position: relative;
@@ -255,7 +298,7 @@ h3 {
 <div class="bar-top">
 <div class="row">
     <div align="left" class="top-column">
-	<a href="https://amzn.to/3wJVzCP"><i class="icon-top fa fa-regular fa-gem"></i></a>
+	<a href="https://amzn.to/3wJVzCP"><i class="icon-top fa fa-brands fa-web-awesome"></i></a>
 	<a href="https://www.amazon.in/b?node=14351766031&tag=online_shopping_offer-21"><i id="div1" class="icon-top fa"></i></a>
 	</div>
     <div align="center" class="top-column">
@@ -375,6 +418,18 @@ h3 {
 </div>
 
 
+<!-- <div class="bar-extra">
+<div class="menu">
+<h3 style="font-size:18px;">Deals:</h3>
+<a href="#" class="h2">&#x20B9;99&nbsp;&nbsp; </a>
+<a href="#" class="h2">&#x20B9;199&nbsp;&nbsp; </a>
+<a href="#" class="h2">&#x20B9;299&nbsp;&nbsp; </a>
+<a href="#" class="h2">&#x20B9;499&nbsp;&nbsp; </a>
+<a href="#" class="h2">&#x20B9;999&nbsp;&nbsp; </a>
+</div>
+</div> -->
+
+
 <div class="bar-bottom">
 <a href="https://forms.gle/2ySHRr2vvafVn7KJ6"><i class="tooltip icon-bottom fa fa-envelope"><span class="tooltiptext">Contact us</span></i></a>
 <a href="#"><i class="tooltip icon-bottom fa fa-info-circle"><span class="tooltiptext">Privacy policy</span></i></a>
@@ -383,12 +438,13 @@ h3 {
 <a href="shareapp://message?=Check out this cool thing! Get amazing live offers and cashback SHOP NOW!&url=https://play.google.com/store/apps/dev?id=8760295387755897783"><i class="tooltip icon-bottom fa fa-share" id="shareBtn"><span class="tooltiptext">Share</span></i></a>
 </div>
 
-    <div align="center" >
+    <div align="center">
 	<h3 style="font-size:10px; color: #9E9E9E;">&#169;2024, App or its affiliates, Ver.1.2.0</h3>
 	</div>
 	
 	
 <script>
+
 const shareBtn = document.querySelector('#shareBtn');
       shareBtn.onclick = async function() {
         if(navigator.share) {
@@ -399,9 +455,7 @@ const shareBtn = document.querySelector('#shareBtn');
           };
           await navigator.share(shareData);
           console.log('Share Successfull');
-        } else {
-          alert('Web Share not supported');
-        }
+        } 
       }
 
 const shareBtn2 = document.querySelector('#shareBtn2');
@@ -414,9 +468,7 @@ const shareBtn2 = document.querySelector('#shareBtn2');
           };
           await navigator.share(shareData);
           console.log('Share Successfull');
-        } else {
-          alert('Web Share not supported');
-        }
+        } 
       }
 	  
 	  
@@ -452,13 +504,14 @@ function startDictation() {
 function home() {
   var a;
   a = document.getElementById("div1");
-  a.innerHTML = "&#128081;";
+  a.innerHTML = "&#xf3a5;";
   setTimeout(function () {
       a.innerHTML = "&#9889;";
     }, 1000);
 }
 home();
 setInterval(home, 2000);
+
 </script>
 
 </body>
