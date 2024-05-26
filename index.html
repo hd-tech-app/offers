@@ -1,3 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#212c3a">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>Online Shopping - Discover the Best Deals Today</title>
+<meta name="title" content="Online Shopping - Discover the Best Deals Today">
+<meta name="description" content="Discover a wide range of products and enjoy a seamless shopping experience at our online store. Find everything you need in one place. Shop now!">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="/">
+<meta property="og:title" content="Online Shopping - Discover the Best Deals Today">
+<meta property="og:description" content="Discover a wide range of products and enjoy a seamless shopping experience at our online store. Find everything you need in one place. Shop now!">
+
+
+
+
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+.row {margin: 5px -5px -5px -5px;}
+
+.space {margin-top: 0px;
+		margin-bottom: 0px;}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+.top-column {
+  float: left;
+  width: 33.333%;
+  padding: 1px;
+}
+
+.top-column2 {
+  float: left;
+  padding: 1px;
+}
+
+.column2-left {
+    width: 100%;
+    float: inline-start;
+    position: absolute;
+  
+}
+.column2-right {
+	float: inline-start;
+	position: relative;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 50%;
+    display: block;
+  }
+}
+
+/* Responsive columns */
+@media screen and (max-width: 300px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 1px;
+  text-align: center;
+  color: white;
+  border-radius: 6px;
+  background: linear-gradient(0deg, #1565c0 0%, #2196f3 100%);
+}
+
+.card:hover {
+  background: linear-gradient(0deg, #ad1459 0%, #e91e8da8 100%);
+  transition: transform 0.3s;
+  transform: scale(1.05);
+}
+
+.card:activ {
+  background: linear-gradient(0deg, #ad1459 0%, #e91e8da8 100%);
+  transition: transform 0.3s;
+  transform: scale(1.05);
+}
+
+.icon-top:hover {
+  color: #ff0057;
+  transition: transform 0.3s;
+  transform: scale(1.40);
+}
+
+.icon-bottom:hover {
+  color: #ffc107;
+  transition: transform 0.3s;
+  transform: scale(1.75);
+}
+
+.bar-top {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 0px 5px 8px 5px;
+  background: linear-gradient(135deg, rgba(13,200,214,1) 0%, rgba(45,88,253,1) 100%);
+  margin: 0px;
+  color: white;
+  border-radius: 6px;
+}
+
+.bar-bottom {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(13,200,214,1) 0%, rgba(45,88,253,1) 100%);
+  margin: 10px 0px 0px;
+  color: white;
+  border-radius: 6px;
+}
+
+.bar-extra {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(13,200,214,1) -28%, rgba(45,88,253,1) 133%);
+  margin: 10px 0px 0px;
+  color: white;
+  border-radius: 6px;
+}
+
+.fa {font-size:45px;
+	 color: white;}
+
+.fo {font-size:30px;
+	 color: white;}
+	 
+.h2 {display: block;
+	   font-size: 20px;
+       color: white;
+       margin: 2px 0px;
+	   font-weight: bold;}
+
+h3 {
+    display: block;
+    font-size: 16px;
+    margin: 10px 5px;
+}
+
+
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #E0E0E0;
+  transition: transform 0.3s;
+  transform: scale(1.20);
+}
+
+
+.menu {
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.menu a, h3 {
+  display: inline-block;
+
+}
+
+
+.icon-top {font-size:27px; padding: 10px 10px;}
+
+.icon-bottom {font-size:27px; padding: 10px 15px;}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #424242;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 90%;
+  left: 78%;
+  margin-left: -40px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font: menu;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.search-container {
+  padding: 0px 58px 0px 48px;
+}
+#search-form {
+  width: auto;
+  margin: 0 auto;
+  position: relative;
+}
+#search-form input {
+  width: 100%;
+  font-size: 1.0rem;
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  margin-top: 3px;
+}
+#search-form button {
+  position: absolute;
+  right: 12px;
+  bottom: -5px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 3rem;
+  text-align: center;
+  font-size: 1.01rem;
+  cursor: pointer;
+  color: #333;
+}
+.button2 {
+  position: absolute;
+  right: 48px;
+  bottom: 5px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  color:#ffa000d4;
+  font-size: 25px;
+}
+.button3 {
+  position: absolute;
+  right: 48px;
+  bottom: 5px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  color:#ffa000d4;
+  font-size: 25px;
+}
+.info {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+</style>
+	
+</head>
+<body>
+
+<div class="bar-top">
+<div class="row">
+    <div align="left" class="top-column">
+	<a href="https://amzn.to/3wJVzCP"><i class="icon-top fa fa-brands fa-web-awesome"></i></a>
+	<a href="https://www.amazon.in/b?node=14351766031&tag=online_shopping_offer-21"><i id="div1" class="icon-top fa"></i></a>
+	</div>
+    <div align="center" class="top-column">
+	<h3 style="font-size:18px;">Live offers!</h3>
+	</div>
+    <div align="right" class="top-column">
+	<a href="https://www.amazon.in/hz/wishlist/ls?requiresSignIn=1&ref_=nav_AccountFlyout_wl&tag=online_shopping_offer-21"><i class="icon-top fa fa-heart"></i></a>
+	<a href="shareapp://message?=Check out this cool thing! Get amazing live offers and cashback SHOP NOW!&url=https://play.google.com/store/apps/dev?id=8760295387755897783"><i class="icon-top fa fa-share-alt" id="shareBtn2"></i></a>
+	</div></div>
+	
+<div class="row">
+    <div class="top-column2 column2-left">
+	<div class="search-container" id="search-form">
+  <form id="voice" method="get" action="https://www.amazon.in/s/">
+    <input type="text" name="k" id="transcript" placeholder="Search any product...">
+	<input type="hidden" name="tag" value="online_shopping_offer-21">
+    <button onclick="startDictation()" type="button"><i class="icon-top fa fa-microphone"></i></button>
+	<button type="submit"><i class="button2 icon-top fa fa-magnifying-glass"></i></button>
+  </form>
+</div>
+	</div>
+	<div class="top-column2 column2-right">
+	  	<a href="https://amzn.to/44YGYAb"><i class="icon-top fa fa-user-large"></i></a>
+	</div></div>
+
+</div>
+
+<div class="row">
+  <a href="https://amzn.to/4dO90SS"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-shopping-bag"></i></p>
+      <h3>Trending</h3>
+    </div>
+  </div></a> 
+
+  <a href="https://amzn.to/3UTp4ds"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-gift"></i></p>
+      <h3>Today's Deals</h3>
+    </div>
+  </div></a> 
+  
+  <a href="https://amzn.to/4dQS6my"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-ticket"></i></p>
+      <h3>Cashback Coupons</h3>
+    </div>
+  </div></a> 
+  
+  <a href="https://amzn.to/4bLZHkD"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-solid fa-fire"></i></p>
+      <h3>Hot New Releases</h3>
+    </div>
+  </div></a> 
+</div>
+
+
+<div class="row">
+  <a href="https://amzn.to/3V84szr"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-list-ul"></i></p>
+      <h3>Categories</h3>
+    </div>
+  </div></a> 
+  
+  <a href="https://amzn.to/3K9LVMP"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-cutlery"></i></p>
+      <h3>Grocery</h3>
+    </div>
+  </div></a> 
+
+  <a href="https://amzn.to/4bD7MrU"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-plane"></i></p>
+      <h3>Travel</h3>
+    </div>
+  </div></a> 
+  
+  <a href="https://amzn.to/4bwAA5F"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-credit-card"></i></p>
+      <h3>Pay Bills</h3>
+    </div>
+  </div></a> 
+</div>
+
+<div class="row">
+  <a href="https://www.amazon.in/minitv?_encoding=UTF8&refMarker=avod_in_mw_ha&tag=online_shopping_offer-21"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-tv"></i></p>
+      <h3>miniTV</h3>
+    </div>
+  </div></a> 
+  
+  <a href="https://gamesnacks.com"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-gamepad"></i></p>
+      <h3>Play Games</h3>
+    </div>
+  </div></a> 
+  
+    <a href="https://amzn.to/4bKjYa9"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-book-open"></i></p>
+      <h3>E-Books</h3>
+    </div>
+  </div></a>
+  
+  <a href="https://forms.gle/34Vzf9JSxcUt95by9"><div class="column">
+    <div class="card">
+      <p><i class="fa fa-check-double"></i></p>
+      <h3>Up comming</h3>
+    </div>
+  </div></a> 
+</div>
+
+
+<!-- <div class="bar-extra">
+<div class="menu">
+<h3 style="font-size:18px;">Deals:</h3>
+<a href="#" class="h2">&#x20B9;99&nbsp;&nbsp; </a>
+<a href="#" class="h2">&#x20B9;199&nbsp;&nbsp; </a>
+<a href="#" class="h2">&#x20B9;299&nbsp;&nbsp; </a>
+<a href="#" class="h2">&#x20B9;499&nbsp;&nbsp; </a>
+<a href="#" class="h2">&#x20B9;999&nbsp;&nbsp; </a>
+</div>
+</div> -->
+
+
+<div class="bar-bottom">
+<a href="https://forms.gle/2ySHRr2vvafVn7KJ6"><i class="tooltip icon-bottom fa fa-envelope"><span class="tooltiptext">Contact us</span></i></a>
+<a href="#"><i class="tooltip icon-bottom fa fa-info-circle"><span class="tooltiptext">Privacy policy</span></i></a>
+<a href="https://play.google.com/store/apps/developer?id=HD+TECH"><i class="tooltip icon-bottom fa fa-brands fa-google-play"><span class="tooltiptext">More apps</span></i></a>
+<a href="https://play.google.com/store/apps/dev?id=8760295387755897783"><i class="tooltip icon-bottom fa fa-star"><span class="tooltiptext">Rate</span></i></a>
+<a href="shareapp://message?=Check out this cool thing! Get amazing live offers and cashback SHOP NOW!&url=https://play.google.com/store/apps/dev?id=8760295387755897783"><i class="tooltip icon-bottom fa fa-share" id="shareBtn"><span class="tooltiptext">Share</span></i></a>
+</div>
+
+    <div align="center">
+	<h3 style="font-size:10px; color: #9E9E9E;">&#169;2024, App or its affiliates, Ver.1.2.0</h3>
+	</div>
+	
+	
+<script>
+
 const shareBtn = document.querySelector('#shareBtn');
       shareBtn.onclick = async function() {
         if(navigator.share) {
@@ -31,3 +478,49 @@ const shareBtn2 = document.querySelector('#shareBtn2');
           alert('Web Share not supported');
     -->  } 
       }
+	  
+	  
+function startDictation() {
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'en-US';
+      recognition.start();
+
+      recognition.onresult = function (e) {
+        document.getElementById('transcript').value = e.results[0][0].transcript;
+        recognition.stop();
+        document.getElementById('voice').submit();
+      };
+      recognition.onerror = function (e) {
+        recognition.stop();
+      };
+    }
+  }
+  
+
+  window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
+
+
+function home() {
+  var a;
+  a = document.getElementById("div1");
+  a.innerHTML = "&#xf3a5;";
+  setTimeout(function () {
+      a.innerHTML = "&#9889;";
+    }, 1000);
+}
+home();
+setInterval(home, 2000);
+
+</script>
+
+</body>
+</html>
