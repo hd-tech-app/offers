@@ -306,7 +306,7 @@ a:hover, a:active {
 	</div>
     <div align="right" class="top-column">
 	<a href="https://www.amazon.in/hz/wishlist/ls?requiresSignIn=1&ref_=nav_AccountFlyout_wl&tag=online_shopping_offer-21"><i class="icon-top fa fa-heart"></i></a>
-	<a href="shareapp://message?=Check out this cool thing! Get amazing live offers and cashback SHOP NOW!&url=https://play.google.com/store/apps/dev?id=8760295387755897783"><i class="icon-top fa fa-share-alt" id="shareBtn2"></i></a>
+	<a href="shareapp://message?=Check out this cool thing! \nGet amazing live offers and cashback \nhttps://hdtech.page.link/apps \n\nDownload Apps:SHOP NOW!\n&url=https://play.google.com/store/apps/details?id=com.hdtech.liveoffers"><i class="icon-top fa fa-share-alt" id="shareBtn2"></i></a>
 	</div></div>
 	
 <div class="row">
@@ -432,10 +432,10 @@ a:hover, a:active {
 
 <div class="bar-bottom">
 <a href="https://forms.gle/2ySHRr2vvafVn7KJ6"><i class="tooltip icon-bottom fa fa-envelope"><span class="tooltiptext">Contact us</span></i></a>
-<a href="#"><i class="tooltip icon-bottom fa fa-info-circle"><span class="tooltiptext">Privacy policy</span></i></a>
+<a href="https://sites.google.com/view/hdtech-liveoffers"><i class="tooltip icon-bottom fa fa-info-circle"><span class="tooltiptext">Privacy policy</span></i></a>
 <a href="https://play.google.com/store/apps/developer?id=HD+TECH"><i class="tooltip icon-bottom fa fa-brands fa-google-play"><span class="tooltiptext">More apps</span></i></a>
-<a href="https://play.google.com/store/apps/dev?id=8760295387755897783"><i class="tooltip icon-bottom fa fa-star"><span class="tooltiptext">Rate</span></i></a>
-<a href="shareapp://message?=Check out this cool thing! Get amazing live offers and cashback SHOP NOW!&url=https://play.google.com/store/apps/dev?id=8760295387755897783"><i class="tooltip icon-bottom fa fa-share" id="shareBtn"><span class="tooltiptext">Share</span></i></a>
+<a href="https://play.google.com/store/apps/details?id=com.hdtech.liveoffers"><i class="tooltip icon-bottom fa fa-star"><span class="tooltiptext">Rate</span></i></a>
+<a href="shareapp://message?=Check out this cool thing! \nGet amazing live offers and cashback \nhttps://hdtech.page.link/apps \n\nDownload Apps:SHOP NOW!\n&url=https://play.google.com/store/apps/details?id=com.hdtech.liveoffers"><i class="tooltip icon-bottom fa fa-share" id="shareBtn"><span class="tooltiptext">Share</span></i></a>
 </div>
 
     <div align="center">
@@ -449,16 +449,15 @@ const shareBtn = document.querySelector('#shareBtn');
       shareBtn.onclick = async function() {
         if(navigator.share) {
           const shareData = {
-            title: 'Web Share',
-            text: 'Get amazing live offers and cashback shop now!',
-            url: 'https://play.google.com/store/apps/dev?id=8760295387755897783'
+            title: 'Share',
+            text: 'Check out this cool thing! \nGet amazing live offers and cashback \nhttps://hdtech.page.link/apps \n\nDownload Apps:SHOP NOW!',
+            url: 'https://play.google.com/store/apps/details?id=com.hdtech.liveoffers'
           };
           await navigator.share(shareData);
           console.log('Share Successfull');
         } 
 		
-	<!--  else {
-          alert('Web Share not supported');
+	<!--  else {alert('Web Share not supported');
     -->    }  
       }
 
@@ -466,16 +465,15 @@ const shareBtn2 = document.querySelector('#shareBtn2');
       shareBtn2.onclick = async function() {
         if(navigator.share) {
           const shareData = {
-            title: 'Web Share',
-            text: 'Get amazing live offers and cashback shop now!',
-            url: 'https://play.google.com/store/apps/dev?id=8760295387755897783'
+            title: 'Share',
+            text: 'Check out this cool thing! \nGet amazing live offers and cashback \nhttps://hdtech.page.link/apps \n\nDownload Apps:SHOP NOW!',
+            url: 'https://play.google.com/store/apps/details?id=com.hdtech.liveoffers'
           };
           await navigator.share(shareData);
           console.log('Share Successfull');
         } 
 		
-	<!-- else {
-          alert('Web Share not supported');
+	<!-- else {alert('Web Share not supported');
     -->  } 
       }
 	  
