@@ -449,26 +449,32 @@ const shareBtn = document.querySelector('#shareBtn');
       shareBtn.onclick = async function() {
         if(navigator.share) {
           const shareData = {
-            title: 'Share',
-            text: 'Check out this cool thing! Get amazing live offers and cashback! https://hdtech.page.link/apps Download App Shop Now:,
+            title: 'Web Share',
+            text: 'Check out this cool thing! Get amazing live offers and cashback! https://hdtech.page.link/apps Download App Shop Now:',
             url: 'https://play.google.com/store/apps/details?id=com.hdtech.liveoffers'
           };
           await navigator.share(shareData);
           console.log('Share Successfull');
-        } 
+        }
+		else{
+          
+		}		
       }
 
 const shareBtn2 = document.querySelector('#shareBtn2');
       shareBtn2.onclick = async function() {
         if(navigator.share) {
           const shareData = {
-            title: 'Share',
+            title: 'Web Share',
             text: 'Check out this cool thing! Get amazing live offers and cashback! https://hdtech.page.link/apps Download App Shop Now:',
             url: 'https://play.google.com/store/apps/details?id=com.hdtech.liveoffers'
           };
           await navigator.share(shareData);
           console.log('Share Successfull');
-        } 
+        }
+		else{
+          
+		}		
       }
 	  
 	  
